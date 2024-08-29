@@ -1,6 +1,6 @@
 # EXNO2DS
 # AIM:
-      To perform Exploratory Data Analysis on the given data set.
+ To perform Exploratory Data Analysis on the given data set.
       
 # EXPLANATION:
   The primary aim with exploratory analysis is to examine the data for distribution, outliers and anomalies to direct specific testing of your hypothesis.
@@ -52,12 +52,6 @@ df.describe()
 
 
 
-df.head(4)
-
-![Screenshot 2024-08-27 115322](https://github.com/user-attachments/assets/bb7d6afb-83d7-43fd-87fe-35a39b4383cf)
-
-
-
 df.set_index("PassengerId",inplace=True)
 df.describe()
 
@@ -67,6 +61,12 @@ df.describe()
 df.nunique()
 
 ![Screenshot 2024-08-27 115501](https://github.com/user-attachments/assets/16756e99-833c-412a-ba62-39defb8408b6)
+
+
+df["Survived"].value_counts()
+
+![Screenshot 2024-08-29 103410](https://github.com/user-attachments/assets/f8cd1730-ac50-4e4b-8299-df5e2d4cbc84)
+
 
 
 per=(df["Survived"].value_counts()/df.shape[0]*100).round(2) 
@@ -129,18 +129,23 @@ pt=sns.boxplot(ax=ax1,x='Pclass',y='Age',hue='Gender',data=df)
 ![Screenshot 2024-08-27 120542](https://github.com/user-attachments/assets/b1f4d0ae-9300-427a-8f7f-753d61661708)
 
 
+sns.catplot(data=df,col="Survived",x="Gender",hue="Pclass",kind="Count")
+
+![Screenshot 2024-08-29 104329](https://github.com/user-attachments/assets/dc5ae73b-a7a5-45a2-a1dc-7e4f0f0bfb52)
+
+
+corr = df.corr()
+sns.heatmap(corr,annot=True)
+
+![Screenshot 2024-08-29 104337](https://github.com/user-attachments/assets/1444abfb-ca59-4081-9842-698369d1670b)
+
+
 
 sns.pairplot(df)
 
 ![Screenshot 2024-08-27 120655](https://github.com/user-attachments/assets/8478ee30-f907-483b-8772-2693e57ada6e)
 
 
-corr = df.corr() sns.heatmap(corr,annot=True)
-
-
-```
-
-```
 
 # RESULT
 Hence performing Exploratory Data Analysis on the given data set is successful
