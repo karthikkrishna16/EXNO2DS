@@ -1,3 +1,6 @@
+NAME: TH KARTHIK KRISHNA
+
+REG NO: 212223240067
 # EXNO2DS
 # AIM:
  To perform Exploratory Data Analysis on the given data set.
